@@ -46,6 +46,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/normalize.css/normalize.css",
+              "node_modules/mustard-ui/dist/css/mustard-ui.min.css",
               "src/styles.scss"
             ],
             "scripts": [],

@@ -5,7 +5,10 @@ import { GetConfig } from './store/actions/config.actions';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  host: {
+    class: 'wrapper'
+  }
 })
 export class AppComponent {
   constructor(private store: Store<IAppState>) { }
