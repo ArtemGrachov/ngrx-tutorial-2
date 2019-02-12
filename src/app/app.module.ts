@@ -19,6 +19,8 @@ import { UserEffects } from './store/effects/user.effects';
 import { UsersService } from './services/users.service';
 import { ConfigService } from './services/config.service';
 
+import { SharedModule } from './modules/shared/shared.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -32,7 +34,8 @@ import { AppComponent } from './app.component';
     EffectsModule.forRoot([UserEffects, ConfigEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [
     UsersService,
