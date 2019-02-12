@@ -1,9 +1,14 @@
 <div class="card-title">
-  User name
+  {{user.name}}
 </div>
 <p>
-  <strong>Card number:</strong> 44445-44444
+  <strong>Card number:</strong> {{user.cardNumber}}
 </p>
 <p>
-  <strong>Card type:</strong> silver
+  <strong>Card type:</strong> {{user.cardType}}
 </p>
+<ul class="card-actions">
+  <li>
+    <button class="button-success" [routerLink]="['/users', user.id]">View details</button>
+  </li>
+</ul>

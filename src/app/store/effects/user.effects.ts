@@ -20,10 +20,9 @@ export class UserEffects {
   @Effect() public getUser$ = this.actions$.pipe(
     ofType<GetUser>(EUserActions.GET_USER),
     map((action) => action.payload),
-    withLatestFrom(this.store.pipe(select(selectUserList))),
-    map(([id, users]) => {
-      const selectedUser: IUser = users.find(user => user.id === id);
-      return new GetUserSuccess(selectedUser);
+    switchMap((userId: number) => this.usersService.getUser(userId)),
+    map((user: IUser) => {
+      return new GetUserSuccess(user);
     })
   )
 

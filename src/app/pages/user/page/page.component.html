@@ -1,7 +1,9 @@
-<h1>User name</h1>
-<p>
-  <strong>Card number:</strong> 44445-44444
-</p>
-<p>
-  <strong>Card type:</strong> silver
-</p>
+<ng-container *ngIf="(user$ | async)">
+  <h1>{{(user$ | async).name}}</h1>
+  <p>
+    <strong>Card number:</strong> {{(user$ | async).cardNumber}}
+  </p>
+  <p>
+    <strong>Card type:</strong> {{(user$ | async).cardType}}
+  </p>
+</ng-container>

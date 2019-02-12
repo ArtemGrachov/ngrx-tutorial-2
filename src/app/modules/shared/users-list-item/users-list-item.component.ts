@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IUser } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-users-list-item',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
     class: 'card'
   }
 }) export class UsersListItemComponent {
-
+  @Input() public user: IUser;
 }

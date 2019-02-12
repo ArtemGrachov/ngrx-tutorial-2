@@ -2,11 +2,11 @@
   <div class="nav-container">
     <ul class="nav-links">
       <li>
-        <a href="">Users list</a>
+        <a routerLink="/users" routerLinkActive="active">Users list</a>
       </li>
     </ul>
-    <ul class="tags">
-      <li class="tag tag-blue">test</li>
+    <ul class="tags" *ngIf="(config$ | async)">
+      <li class="tag tag-blue">{{(config$ | async).adminName}}</li>
     </ul>
   </div>
 </nav>
