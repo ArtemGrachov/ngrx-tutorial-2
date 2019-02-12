@@ -20,6 +20,7 @@ import { UsersService } from './services/users.service';
 import { ConfigService } from './services/config.service';
 
 import { SharedModule } from './modules/shared/shared.module';
+import { LayoutModule } from './modules/layout/layout.module';
 
 import { AppComponent } from './app.component';
 
@@ -35,7 +36,8 @@ import { AppComponent } from './app.component';
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    LayoutModule
   ],
   providers: [
     UsersService,
